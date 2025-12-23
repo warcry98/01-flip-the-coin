@@ -80,18 +80,25 @@
 
   </head>
   <body class="bg-slate-600 flex flex-col items-center h-screen">
-    <h1 class="font-kanit text-6xl font-extrabold text-shadow text-gray-200 mt-20 text-center">Flip the coin</h1>
-    <h2 class="font-kanit text-2xl font-semibold text-gray-200 mt-6 text-center">Press the coint or the button to flip the coin</h2>
-    <div class="mb-12 mt-4 perspective">
+    <header role="banner">
+      <h1 class="font-kanit text-6xl font-extrabold text-shadow text-gray-200 mt-20 text-center">Flip the coin</h1>
+    </header>
+    <nav role="navigation">
+      <h2 class="font-kanit text-2xl font-semibold text-gray-200 mt-6 text-center">Press the coint or the button to flip the coin</h2>
+    </nav>
+    <main role="main">
+      <div class="mb-12 mt-4 perspective">
         <div id="coin" class="coin relative w-40 h-40 transition-transform duration-1000">
           <img class="mt-8 absolute inset-0 backface-hidden" id="head-coin" title="head-coin" src="./resources/heads.svg" />
           <img class="mt-8 absolute inset-0 rotate-y-180 backface-hidden" id="tail-coin" title="tail-coin" src="./resources/tails.svg" />
         </div>
-    </div>
-    <img class="mt-4" id="shadow-coin" title="shadow-coin" src="./resources/shadow.svg" />
-    <h3 id="result" class="font-kanit mt-12 font-semibold text-xl text-gray-200">Heads</h3>
-    <button id="flipBtn" type="button" class="bg-sky-700 px-7 py-2 font-kanit font-semibold rounded-md box-shadow text-gray-200 mt-7">
-      RANDOM
-    </button>
+      </div>
+      <img class="mt-4" id="shadow-coin" title="shadow-coin" src="./resources/shadow.svg" />
+      <h3 id="result" class="font-kanit mt-12 font-semibold text-xl text-gray-200">Heads</h3>
+      <button id="flipBtn" type="button" class="bg-sky-700 px-7 py-2 font-kanit font-semibold rounded-md box-shadow text-gray-200 mt-7">
+        RANDOM
+      </button>
+    </main>
+    <footer role="contentinfo"></footer>
   </body>
 </html>
