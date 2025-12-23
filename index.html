@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <script defer src="main.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              kanit: ['"Kanit"'],
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      
+      /* Heading Text Shadow */
+      .text-shadow {
+        text-shadow: 2px 2px 0px #35383f;
+        -webkit-text-stroke-width: 5px;
+        -webkit-text-stroke-color: #35383f;
+      }
+
+      .box-shadow {
+        box-shadow: 0px 4px 0px 0px #23649b;
+      }
+
+      .text-6xl {
+        font-size: 4rem;
+      }
+
+      .bg-slate-600 {
+        background-color: #404A65;
+      }
+
+      .text-gray-200 {
+        color: #ECEDF0;
+      }
+
+      .bg-sky-700 {
+        background-color: #1F6FB0;
+      }
+
+      .backface-hidden {
+        backface-visibility: hidden;
+      }
+
+      .coin {
+        transform-style: preserve-3d;
+      }
+
+      .rotate-y-180 {
+        transform: rotateY(180deg);
+      }
+
+      .perspective {
+        perspective: 1000px;
+      }
+
+    </style>
+
+    <link
+      rel="icon"
+      href="resources/favicon.ico"
+      type="image/x-icon"
+      sizes="96x96"
+    />
+
+    <title>Flip the coin | devChallenges.io</title>
+
+  </head>
+  <body class="bg-slate-600 flex flex-col items-center h-screen">
+    <h1 class="font-kanit text-6xl font-extrabold text-shadow text-gray-200 mt-12 text-center">Flip the coin</h1>
+    <h2 class="font-kanit text-2xl font-semibold text-gray-200 mt-4 text-center">Press the coint or the button to flip the coin</h2>
+    <div class="mb-12 perspective">
+        <div id="coin" class="coin relative w-40 h-40 transition-transform duration-1000">
+          <img class="mt-8 absolute inset-0 backface-hidden" id="head-coin" title="head-coin" src="./resources/heads.svg" />
+          <img class="mt-8 absolute inset-0 rotate-y-180 backface-hidden" id="tail-coin" title="tail-coin" src="./resources/tails.svg" />
+        </div>
+    </div>
+    <img class="mt-4" id="shadow-coin" title="shadow-coin" src="./resources/shadow.svg" />
+    <h3 id="result" class="font-kanit mt-12 font-semibold text-xl text-gray-200">Heads</h3>
+    <button id="flipBtn" type="button" class="bg-sky-700 px-7 py-2 font-kanit font-semibold rounded-md box-shadow text-gray-200 mt-7">
+      RANDOM
+    </button>
+  </body>
+</html>
